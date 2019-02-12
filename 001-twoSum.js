@@ -10,6 +10,7 @@
  * 所以返回 [0, 1]
 **/
 
+// test
 // solution1:
 var twoSum = function (numbers, target) {
     let map = {};
