@@ -11,6 +11,7 @@
 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]
 
 solutions: 
+```javascript
 var twoSum = function(nums, target) {
     let result = {};
     let length = nums.length;
