@@ -1,5 +1,4 @@
 /**
-
  * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
 
  * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
@@ -16,14 +15,14 @@
 // solution1:
 var addTwoNumbers = function (l1, l2) {
 
-    var c = 0;
-    var ret = new ListNode(0);
-    var curr = ret;
+    let c = 0;
+    let ret = new ListNode(0);
+    let curr = ret;
 
     while (l1 || l2) {
-        var a = l1 ? l1.val : 0;
-        var b = l2 ? l2.val : 0;
-        var sum = a + b + c;
+        let a = l1 ? l1.val : 0;
+        let b = l2 ? l2.val : 0;
+        let sum = a + b + c;
         c = Math.floor(sum / 10);
         curr.next = new ListNode(sum % 10);
         if (l1) {

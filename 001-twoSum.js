@@ -6,20 +6,19 @@
  * 示例:
 
  * 给定 nums = [2, 7, 11, 15], target = 9
-
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
 **/
 
 // solution1:
 var twoSum = function (numbers, target) {
-    var map = {};
-    for (var i = 0; i < numbers.length; i++) {
-        var n = numbers[i]
+    let map = {};
+    for (let i = 0; i < numbers.length; i++) {
+        let n = numbers[i];
         if (map[target - n] !== undefined) {
             return [map[target - n], i];
         } else {
             map[n] = i;
         }
     }
-}; //solution1
+}; 
