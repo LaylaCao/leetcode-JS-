@@ -19,7 +19,22 @@
      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 */
 
-// solution1: 
+// solution1:
+var lengthOfLongestSubstring = function(s) { 
+    var len = s.length; 
+    var arr=[],num=0,i=0,j=0; 
+    for(;j<len;j++){ 
+        if(arr.indexOf(s[j])!==-1){ 
+            i = arr.lastIndexOf(s[j])+1; 
+            arr.splice(0,i); 
+        } 
+        num = Math.max(num, arr.length+1); 
+        arr.push(s[j]); 
+    } 
+    return num; 
+};
+
+// solution2: 
 var lengthOfLongestSubstring = function (s) {
 
     var max = 0;
