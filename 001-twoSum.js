@@ -22,3 +22,17 @@ var twoSum = function (numbers, target) {
         }
     }
 }; 
+
+// solution1: 
+var twoSum = function(nums, target) { 
+    var tempArr = []; 
+    for (var i = 0; i < nums.length; i++) { 
+        var temp = target - nums[i]; 
+        var index = tempArr.lastIndexOf(temp); 
+        if (index !== -1) { 
+            return [index, i]; 
+        } 
+        tempArr.push(nums[i]); 
+    } 
+    return null; 
+};
