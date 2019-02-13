@@ -12,6 +12,11 @@
  * 原因：342 + 465 = 807
  **/
 
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+ }
+ 
 // solution1:
 var addTwoNumbers = function (l1, l2) {
 
@@ -39,3 +44,13 @@ var addTwoNumbers = function (l1, l2) {
 
     return ret.next;
 };
+
+
+// test 
+l1 = {val: 5, next: {val:5 ,next: {val:5}}}
+l2 = {val: 1, next: {val:3 ,next: {val:4}}}
+
+
+addTwoNumbers (l1,l2) //console.log(9-8-6)
+
+
