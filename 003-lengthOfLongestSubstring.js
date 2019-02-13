@@ -20,6 +20,30 @@
 */
 
 // solution1:
+var lengthOfLongestSubstring = function(s) {
+    var repeatMap = {};
+    var longest = 0, start = 0, end = 0;
+    for (var i = 0; i < s.length; i++) {
+        var ch = s[i];
+        if (ch in repeatMap) {
+            // 发现重复，从重复的位置一直往前删除`repeatMap`
+            var pos = repeatMap[ch];
+            for (var j = start; j <= pos; j++) {
+                delete repeatMap[s[j]];
+            }
+            
+            start = pos + 1;
+        }
+        
+        repeatMap[ch] = i;
+        end = i;
+        longest = Math.max(end - start + 1, longest);
+    }
+    
+    return longest;
+};
+
+// solution2: 
 var lengthOfLongestSubstring = function(s) { 
     var len = s.length; 
     var arr=[],num=0,i=0,j=0; 
@@ -34,7 +58,7 @@ var lengthOfLongestSubstring = function(s) {
     return num; 
 };
 
-// solution2: 
+// solution3: 
 var lengthOfLongestSubstring = function (s) {
 
     var max = 0;
