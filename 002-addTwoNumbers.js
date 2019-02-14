@@ -60,6 +60,7 @@ var addTwoNumbers = function(l1, l2) {
         node = node.next;
     }
     return dumpy.next.next;
+    
 };
 
 
@@ -69,5 +70,7 @@ l2 = {val: 1, next: {val:3 ,next: {val:4}}}
 
 
 addTwoNumbers (l1,l2) //console.log(9-8-6)
+
+// QA: 如果链表长度不一呢？
 
 
