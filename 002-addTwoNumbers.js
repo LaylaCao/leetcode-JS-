@@ -18,6 +18,37 @@ function ListNode(val) {
  }
  
 // solution1:
+
+ var addTwoNumbers = function (l1, l2) {
+    let head = new ListNode(0)
+    let cur = head
+    let curry = 0
+
+    while (true) {
+        let sum = curry
+        sum += l1 ? l1.val : 0
+        sum += l2 ? l2.val : 0
+        cur.val = sum % 10
+        curry = parseInt(sum / 10)
+        if (l1) l1 = l1.next
+        if (l2) l2 = l2.next
+        if (l1 != null || l2 != null) {
+            cur.next = new ListNode(0)
+            cur = cur.next
+        } else {
+            break
+        }
+    }
+    if (curry != 0) {
+        cur.next = new ListNode(0)
+        cur = cur.next
+        cur.val = curry
+    }
+    return head
+};
+
+
+// solution2:
 var addTwoNumbers = function (l1, l2) {
 
     let c = 0;
@@ -45,7 +76,7 @@ var addTwoNumbers = function (l1, l2) {
     return ret.next;
 };
 
-// solution2: 
+// solution3: 
 var addTwoNumbers = function(l1, l2) {
     let dumpy = new ListNode(-1), node = new ListNode(-1);
     dumpy.next = node;

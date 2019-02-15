@@ -11,6 +11,17 @@
 **/
 
 // solution1:
+var twoSum = function(nums, target) {
+    const map = new Map()
+    for(let i = 0; i < nums.length; i++){
+        if (map.has(target - nums[i])){
+            return [ map.get(target - nums[i]), i ]
+        }
+        map.set(nums[i], i)
+    }
+};
+
+// solution2:
 var twoSum = function (numbers, target) {
     let map = {};
     for (let i = 0; i < numbers.length; i++) {
@@ -23,7 +34,7 @@ var twoSum = function (numbers, target) {
     }
 }; 
 
-// solution1: 
+// solution3: 
 var twoSum = function(nums, target) {
 	var tempArr = [];
 	for (var i = 0; i < nums.length; i++) {
