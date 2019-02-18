@@ -92,6 +92,60 @@ var maxSubArray = function(nums) {
 };
 ```
 
+3.查找：遇到查找某个值会用到的方法:a.排序算法 b.二分查找 c.索引移动
+3.1 查找横向和纵向都递增的二维矩阵中的某个值
+
+```javascript
+var searchMatrix = function(matrix, target) {
+	if (matrix.length == 0) return false;
+	let row = 0, col = matrix[0].length - 1
+	while(true) {
+		if (matrix[row][col] > target && col > 0) {
+			col--
+		} else if (matrix[row][col] < target && row < matrix.length - 1) {
+			row++
+		} else if (matrix[row][col] == target) {
+			return true
+		} else {
+			break
+		}
+	}
+	return false
+};
+```
+先将位置定位在右上角，通过改变位置坐标来找到目标值。
+
+4.回文:正着读反着读是一样的
+```javascript
+var longestPalindrome = function(s) {
+	let maxLength = 0, left = 0, right = 0;
+	for (let i = 0, i < s.length; i++) {
+		let singleCharLength = getPalLenByCenterChar(s, i, i);
+		let doubleCharLength = getPalLenByCenterChar(s, i, i + 1);
+		let max = Math.max(singleCharLength, doubleCharLength);
+		if (max > maxLength) {
+			
+		}
+	}
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
