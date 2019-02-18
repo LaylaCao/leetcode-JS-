@@ -9,6 +9,7 @@ var maxDepth = function(root) {
 	if (root == null) return 0;
 	return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
+```
 
 1.2 将二叉树以二维数组形式表现
 ```javascript
