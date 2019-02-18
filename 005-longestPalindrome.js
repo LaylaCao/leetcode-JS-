@@ -12,6 +12,8 @@
 输出: "bb"
  **/
 
+
+// solution1:
  var longestPalindrome = function (s) {
     let maxLength = 0, left = 0, right = 0
     for (let i = 0; i < s.length; i++) {
@@ -44,3 +46,31 @@ function getPalLenByCenterChar(s, left, right) {
 }
 
 console.log(longestPalindrome("cbbd"))
+
+// solution2:
+var longestPalindrome = function (s) {
+    var a = new Date();
+    var n = s.length;
+    var res = '';
+    var dp = [];
+    while (dp.push(new Array(n).fill(-1)) < n);
+    // console.log(dp);
+
+    for (var i = n - 1; i >= 0; i--) {
+        for (var j = i; j < n; j++) {
+            dp[i][j] = s[i] === s[j] && ((j - i < 3) || dp[i + 1][j - 1]);
+            if (dp[i][j] === undefined) {
+                console.log(i, j, s[i], s[j], dp[i + 1][j - 1])
+            }
+            if (dp[i][j]) {
+                var tmp = s.substring(i, j + 1);
+                if (tmp.length > res.length) res = tmp;
+            }
+
+        }
+    }
+    // console.log(dp);
+    console.log(new Date() - a);
+
+    return res;
+};
