@@ -26,6 +26,7 @@ function helper(node, ans, i) {
 	helper(node.left, ans, i + 1);
 	helper(node.right, ans, i + 1);
 }
+```
 // 都是通过递归方式逐层向下查找二叉树数据
 
 2.可能性问题：一般是告诉一组数据，求出可能性，最小值或最大值
@@ -47,3 +48,4 @@ var coinChange = function(coins, amount) {
 	}
 	return dp[amount] > amount ? -1 : dp[amount];
 };
+```
