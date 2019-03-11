@@ -1,27 +1,36 @@
-var reverse = function (x) {
-    const s = x + ""
-    let i = 0
-    let sign = 1
-    if (s[i] == "-") {
-        i++
-        sign = -1
-    }
-    if (s[i] == "+") {
-        i++
-    }
-    let num = 0
-    for (let j = s.length - 1; j >= i; j--) {
-        num = num * 10 + parseInt(s[j])
-    }
-    num *= sign
-    let max = 2
-    for (let n = 0; n < 30; n++){
-        max *= 2
-    }
-    if (num > max || num < -max){
-        return 0
-    }
-    return num
-};
+/*
+给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
 
-console.log(reverse(1563847412))
+示例 1:
+
+输入: 123
+输出: 321
+ 示例 2:
+
+输入: -123
+输出: -321
+示例 3:
+
+输入: 120
+输出: 21
+注意:
+
+假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
+*/
+
+var reserve = function (x) {
+	var sign = x > 0 ? -1 : 1;
+	x = Math.abs(x); // 取x的绝对值
+
+	var sum = 0;
+	while (x) {
+		sum = sum * 10 + x % 10;
+		x = Math.floor(x / 10);
+	}
+	var ret = sign * -1 * sum;
+	var max = Math.pow(2, 31) - 1;
+	var min = -Math.pow(2, 31);
+	if (ret > max) return 0;
+	if (ret < min) return 0;
+	return ret;
+}
