@@ -16,6 +16,7 @@ var twoSum = function(nums, target) {
     const map = new Map()
     for(let i = 0; i < nums.length; i++){
         if (map.has(target - nums[i])){
+        	console.log(map.get(target - nums[i]));
         	// get返回某个 Map 对象中的一个指定元素。
             return [ map.get(target - nums[i]), i ]
         }
@@ -43,6 +44,8 @@ var twoSum = function(nums, target) {
 	var tempArr = [];
 	for (var i = 0; i < nums.length; i++) {
 		var temp = target - nums[i];
+		// lastIndexOf() 方法可返回一个指定的字符串值最后出现的位置，
+		// 在一个字符串中的指定位置从后向前搜索。
 		var index = tempArr.lastIndexOf(temp);
 		console.log('i' + i)
 		console.log('index' + index)
