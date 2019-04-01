@@ -12,11 +12,15 @@
 
 // solution1:
 var twoSum = function(nums, target) {
+	//  Map 对象保存键值对
     const map = new Map()
     for(let i = 0; i < nums.length; i++){
         if (map.has(target - nums[i])){
+        	// get返回某个 Map 对象中的一个指定元素。
             return [ map.get(target - nums[i]), i ]
         }
+        // Set对象是值的集合，你可以按照插入的顺序迭代它的元素。 
+        // Set中的元素只会出现一次，即 Set 中的元素是唯一的。
         map.set(nums[i], i)
     }
 };
